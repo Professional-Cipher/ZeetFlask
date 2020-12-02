@@ -36,19 +36,15 @@ from . import appbuilder, db
     Application wide 404 error handler
 """
 
-@appbuilder.app.route("/home")
-def home():
-    return render_template("index.html")
 
-
-# @appbuilder.app.errorhandler(404)
-# def page_not_found(e):
-#     return (
-#         render_template(
-#             "404.html", base_template=appbuilder.base_template, appbuilder=appbuilder
-#         ),
-#         404,
-#     )
+@appbuilder.app.errorhandler(404)
+def page_not_found(e):
+    return (
+        render_template(
+            "404.html", base_template=appbuilder.base_template, appbuilder=appbuilder
+        ),
+        404,
+    )
 
 
 db.create_all()
