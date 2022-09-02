@@ -1,0 +1,5 @@
+install venv :
+python -m venv venv
+
+install package :
+pip install -r "nama file"
